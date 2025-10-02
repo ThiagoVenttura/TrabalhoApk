@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trabalho</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('lofi.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      color: white;
+    }
+    h1 {
+      padding-top: 30px;
+      color: #fff;
+    }
+    .audio-container {
+      margin-top: 30px;
+    }
+    .audio-wrapper {
+      position: relative;
+      display: inline-block;
+      margin: 15px;
+    }
+    .audio-wrapper audio {
+      display: none;
+    }
+    .btn-play {
+      width: 60px;
+      height: 60px;
+      border: none;
+      border-radius: 50%;
+      background-color: rgba(255, 87, 34, 0.9);
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      transition: transform 0.2s ease, background-color 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+    .btn-play:hover {
+      background-color: rgba(230, 74, 25, 0.9);
+      transform: scale(1.1);
+    }
+    .btn-play.playing {
+      background-color: rgba(76, 175, 80, 0.9);
+    }
+    #mensagem {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="Titulo">Escolha sua Música! 🎵</h1>
+  <div class="audio-container">
+    <div class="audio-wrapper">
+      <audio src="musica1.mp3"></audio>
+      <button class="btn-play">▶️</button>
+    </div>
+    <div class="audio-wrapper">
+      <audio src="musica2.mp3"></audio>
+      <button class="btn-play">▶️</button>
+    </div>
+    <div class="audio-wrapper">
+      <audio src="musica3.mp3"></audio>
+      <button class="btn-play">▶️</button>
+    </div>
+    <div class="audio-wrapper">
+      <audio src="musica4.mp3"></audio>
+      <button class="btn-play">▶️</button>
+    </div>
+    <div class="audio-wrapper">
+      <audio src="musica5.mp3"></audio>
+      <button class="btn-play">▶️</button>
+    </div>
+  </div>
+  <p id="mensagem">Boa escolha, agora curta 🎧</p>
+  <script>
+    const wrappers = document.querySelectorAll('.audio-wrapper');
+    const mensagem = document.getElementById('mensagem');
+    let currentAudio = null;
+    let currentButton = null;
+    wrappers.forEach((wrap) => {
+      const audioEl = wrap.querySelector('audio');
+      const btn = wrap.querySelector('.btn-play');
+      btn.addEventListener('click', () => {
+        if (audioEl === currentAudio) {
+          if (!audioEl.paused) {
+            audioEl.pause();
+            btn.textContent = '▶️';
+            btn.classList.remove('playing');
+            mensagem.style.display = 'none';
+          } else {
+            audioEl.play();
+            btn.textContent = '⏸️';
+            btn.classList.add('playing');
+            mensagem.style.display = 'inline-block';
+          }
+          return;
+        }
+        if (currentAudio) {
+          currentAudio.pause();
+          if (currentButton) {
+            currentButton.textContent = '▶️';
+            currentButton.classList.remove('playing');
+          }
+        }
+        currentAudio = audioEl;
+        currentButton = btn;
+        audioEl.play();
+        btn.textContent = '⏸️';
+        btn.classList.add('playing');
+        mensagem.style.display = 'inline-block';
+      });
+      audioEl.addEventListener('ended', () => {
+        btn.textContent = '▶️';
+        btn.classList.remove('playing');
+        mensagem.style.display = 'none';
+      });
+    });
+  </script>
+</body>
+
+</html>
