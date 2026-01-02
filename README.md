@@ -42,23 +42,18 @@ Suporte básico a funcionamento offline
 Interface simples e objetiva
 
 📂 Estrutura do Projeto
-├── index.html
-│   └── Arquivo principal da aplicação
-│
-├── manifest.json
-│   └── Configurações para instalação como PWA
-│
-├── service-worker.js
-│   └── Responsável pelo cache e uso offline
-│
-├── lofi.png
-│   └── Imagem utilizada no aplicativo
-│
-├── musica1.mp3 até musica5.mp3
-│   └── Arquivos de áudio utilizados
-│
-└── README.md
-    └── Documentação do projeto
+TrabalhoApk/
+├── index.html          # Arquivo principal da aplicação
+├── manifest.json       # Configurações para instalação como PWA
+├── service-worker.js   # Responsável pelo cache e funcionamento offline
+├── lofi.png            # Imagem utilizada no aplicativo
+├── musica1.mp3         # Arquivo de áudio
+├── musica2.mp3         # Arquivo de áudio
+├── musica3.mp3         # Arquivo de áudio
+├── musica4.mp3         # Arquivo de áudio
+├── musica5.mp3         # Arquivo de áudio
+└── README.md           # Documentação do projeto
+
 
 🚀 Como Executar o Projeto
 Opção 1 — Abrir diretamente
