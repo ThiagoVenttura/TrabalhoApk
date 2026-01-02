@@ -45,14 +45,23 @@ Interface simples e objetiva
 TrabalhoApk/
 
 ├── index.html          # Arquivo principal da aplicação
+
 ├── manifest.json       # Configurações para instalação como PWA
+
 ├── service-worker.js   # Responsável pelo cache e funcionamento offline
+
 ├── lofi.png            # Imagem utilizada no aplicativo
+
 ├── musica1.mp3         # Arquivo de áudio
+
 ├── musica2.mp3         # Arquivo de áudio
+
 ├── musica3.mp3         # Arquivo de áudio
+
 ├── musica4.mp3         # Arquivo de áudio
+
 ├── musica5.mp3         # Arquivo de áudio
+
 └── README.md           # Documentação do projeto
 
 
