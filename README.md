@@ -43,6 +43,7 @@ Interface simples e objetiva
 
 📂 Estrutura do Projeto
 TrabalhoApk/
+
 ├── index.html          # Arquivo principal da aplicação
 ├── manifest.json       # Configurações para instalação como PWA
 ├── service-worker.js   # Responsável pelo cache e funcionamento offline
